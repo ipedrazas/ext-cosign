@@ -1,0 +1,40 @@
+{
+  "icon": "docker.svg",
+  "vm": {
+    "composefile": "docker-compose.yaml",
+    "exposes": {
+      "socket": "extension-cosign.sock"
+    }
+  },
+  "ui": {
+    "dashboard-tab": {
+      "title": "Cosign Extension",
+      "src": "index.html",
+      "root": "ui",
+      "backend": {
+        "socket": "extension-cosign.sock"
+      }
+    }
+  },
+  "host": {
+    "binaries": [
+      {
+        "darwin": [
+          {
+            "path": "/data/bin/darwin/cosign"
+          }
+        ],
+        "windows": [
+          {
+            "path": "/data/bin/windows/cosign.exe"
+          }
+        ],
+        "linux": [
+          {
+            "path": "/data/bin/linux/cosign"
+          }
+        ]
+      }
+    ]
+  }
+}
